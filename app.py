@@ -96,7 +96,7 @@ with tab1:
         {'pocket_score': 1, 'pocket_mean_pLDDT': 1, 'DeepFri_max_score': 2, 'struct_resid_in_pockets': 2})
     
     try:
-        entryID = st.experimental_get_query_params().get('entryID')[0]
+        entryID = st.st.query_params().get('entryID')[0]
         entryID_index_ = int(df_pockets_aggrid_.query('UniProtKB_ac == @entryID').index.values[0])
     except:
         entryID_index_ = 0
