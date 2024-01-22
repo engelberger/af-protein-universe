@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY requirements.txt /tmp/requirements.txt
 
 RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt
+RUN wget https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz; tar xvzf foldseek-linux-avx2.tar.gz; export PATH=$(pwd)/foldseek/bin/:$PATH
 
 #RUN wget -P /tmp \
 #    "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh" \
